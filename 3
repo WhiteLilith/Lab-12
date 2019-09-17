@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Rings(double R1, double R2, double Pi, out double S)
+        {
+            S = (Pi * R1 * R1) - (Pi * R2 * R2);
+        }
+        static void Main(string[] args)
+        {
+            double R1, R2, Pi, S, i;
+            for (i = 0; i < 3; i++)
+            {
+                Pi = 3.1415;
+                S = 0;
+                Console.Write("Введите больший радиус: ");
+                R1 = double.Parse(Console.ReadLine());
+                Console.Write("Введите меньший радиус: ");
+                R2 = double.Parse(Console.ReadLine());
+                Rings(R1, R2, Pi, out S);
+                Console.Write("S = ");
+                Console.Write(S);
+            }
+            Console.ReadKey();
+        }
+    }
+}
