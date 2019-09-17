@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Quarter(double xA, double yA, out string b)
+        {
+            b = "0";
+            if  (xA > 0 && yA > 0)
+            {
+                b = "I";
+            }
+            else
+            {
+                if (xA > 0 && yA < 0)
+                {
+                    b = "IV";
+                }
+                else
+                {
+                    if ( xA < 0 && yA < 0)
+                    {
+                        b = "III";
+                    }
+                    else
+                    {
+                        b = "II";
+                    }
+                }
+            }
+        }
+        static void Main(string[] args)
+        {
+            double xA, yA;
+            string b;
+            Console.Write("Введите координаты точки(х,у): ");
+            xA = double.Parse(Console.ReadLine());
+            yA = double.Parse(Console.ReadLine());
+            b = "0";
+            Quarter(xA, yA, out b);
+            switch (b)
+            {
+                case "I":
+                    Console.WriteLine("Точка лежит в I координатной четверти");
+                    break;
+                case "II":
+                    Console.WriteLine("Точка лежит вo II координатной четверти");
+                    break;
+                case "III":
+                    Console.WriteLine("Точка лежит в III координатной четверти");
+                    break;
+                case "IV":
+                    Console.WriteLine("Точка лежит в IV координатной четверти");
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}
