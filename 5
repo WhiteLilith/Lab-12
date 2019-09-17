@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Fact2(int N, int p, int i, out int f)
+        {
+            i = 0;
+            f = 1;
+            p = 0;
+            for (i=1; i<N; i++)
+            {
+                if (N%2 != 0 && p != N)
+                {
+                    p = i * 2 - 1;
+                    f = f * p;
+                }
+                else
+                {
+                    if (N%2 == 0 && p != N)
+                    {
+                        p = i * 2;
+                        f = f * p;
+                    }
+                }
+            }
+        }
+        static void Main(string[] args)
+        {
+            int N, i, p, f;
+            Console.Write("Введите N: ");
+            N = int.Parse(Console.ReadLine());
+            i = 0;
+            f = 1;
+            p = 0; 
+            Fact2(N, p, i, out f);
+            Console.Write(f);
+            Console.ReadKey();
+        }
+    }
+}
