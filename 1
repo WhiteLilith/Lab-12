@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SoloLearn
+{
+    class Program
+    {
+        static void Power(double A, out double B)
+        {
+            B = Math.Pow(A, 3);
+        }
+        static void Main(string[] args)
+        {
+            double A, B, i;
+            for (i = 0; i < 5; i++)
+            {
+                Console.Write("Введите А: ");
+                A = double.Parse(Console.ReadLine());
+                B = 0;
+                Power(A, out B);
+                Console.Write(A);
+                Console.Write(" в третьей степени равно: ");
+                Console.WriteLine(B);
+            }
+            Console.ReadKey();
+        }
+    }
+}
