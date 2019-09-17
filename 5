@@ -8,7 +8,7 @@ namespace SoloLearn
 {
     class Program
     {
-        static void Fact2(int N, int p, int i, out int f)
+        static void Fact2(double N, int p, int i, out double f)
         {
             i = 0;
             f = 1;
@@ -32,9 +32,10 @@ namespace SoloLearn
         }
         static void Main(string[] args)
         {
-            int N, i, p, f;
+            double N, f;
+            int i, p;
             Console.Write("Введите N: ");
-            N = int.Parse(Console.ReadLine());
+            N = double.Parse(Console.ReadLine());
             i = 0;
             f = 1;
             p = 0; 
